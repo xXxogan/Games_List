@@ -1,0 +1,117 @@
+Date : 2026-01-18 21:47:08
+Directory : /Users/xxxogan/flutter_projects/games_list/lib
+Total : 61 files,  1661 codes, 40 comments, 343 blanks, all 2044 lines
+
+Languages
++----------+------------+------------+------------+------------+------------+
+| language | files      | code       | comment    | blank      | total      |
++----------+------------+------------+------------+------------+------------+
+| Dart     |         61 |      1,661 |         40 |        343 |      2,044 |
++----------+------------+------------+------------+------------+------------+
+
+Directories
++----------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| path                                                                                               | files      | code       | comment    | blank      | total      |
++----------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| .                                                                                                  |         61 |      1,661 |         40 |        343 |      2,044 |
+| . (Files)                                                                                          |          2 |         47 |          0 |         10 |         57 |
+| api                                                                                                |          9 |        237 |         19 |         69 |        325 |
+| api (Files)                                                                                        |          2 |        127 |          7 |         25 |        159 |
+| api/models                                                                                         |          7 |        110 |         12 |         44 |        166 |
+| features                                                                                           |         42 |      1,115 |          3 |        217 |      1,335 |
+| features/collection                                                                                |          6 |        107 |          3 |         23 |        133 |
+| features/collection (Files)                                                                        |          1 |          2 |          0 |          1 |          3 |
+| features/collection/view                                                                           |          2 |         28 |          2 |          8 |         38 |
+| features/collection/widgets                                                                        |          3 |         77 |          1 |         14 |         92 |
+| features/game                                                                                      |         11 |        288 |          0 |         60 |        348 |
+| features/game (Files)                                                                              |          1 |          2 |          0 |          1 |          3 |
+| features/game/bloc                                                                                 |          3 |         55 |          0 |         22 |         77 |
+| features/game/view                                                                                 |          2 |         75 |          0 |         14 |         89 |
+| features/game/widgets                                                                              |          5 |        156 |          0 |         23 |        179 |
+| features/games_list                                                                                |          8 |        241 |          0 |         54 |        295 |
+| features/games_list (Files)                                                                        |          1 |          2 |          0 |          1 |          3 |
+| features/games_list/bloc                                                                           |          3 |         97 |          0 |         31 |        128 |
+| features/games_list/view                                                                           |          2 |         83 |          0 |         16 |         99 |
+| features/games_list/widgets                                                                        |          2 |         59 |          0 |          6 |         65 |
+| features/home                                                                                      |         11 |        356 |          0 |         60 |        416 |
+| features/home (Files)                                                                              |          1 |          2 |          0 |          1 |          3 |
+| features/home/view                                                                                 |          2 |         36 |          0 |          8 |         44 |
+| features/home/widgets                                                                              |          8 |        318 |          0 |         51 |        369 |
+| features/settings                                                                                  |          6 |        123 |          0 |         20 |        143 |
+| features/settings (Files)                                                                          |          1 |          2 |          0 |          1 |          3 |
+| features/settings/view                                                                             |          2 |         46 |          0 |          8 |         54 |
+| features/settings/widgets                                                                          |          3 |         75 |          0 |         11 |         86 |
+| router                                                                                             |          2 |        108 |         18 |         27 |        153 |
+| ui                                                                                                 |          6 |        154 |          0 |         20 |        174 |
+| ui (Files)                                                                                         |          1 |          2 |          0 |          1 |          3 |
+| ui/theme                                                                                           |          1 |         61 |          0 |          2 |         63 |
+| ui/widgets                                                                                         |          4 |         91 |          0 |         17 |        108 |
++----------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+
+Files
++----------------------------------------------------------------------------------------------------+----------+------------+------------+------------+------------+
+| filename                                                                                           | language | code       | comment    | blank      | total      |
++----------------------------------------------------------------------------------------------------+----------+------------+------------+------------+------------+
+| /Users/xxxogan/flutter_projects/games_list/lib/api/api.dart                                        | Dart     |         37 |          0 |          8 |         45 |
+| /Users/xxxogan/flutter_projects/games_list/lib/api/api.g.dart                                      | Dart     |         90 |          7 |         17 |        114 |
+| /Users/xxxogan/flutter_projects/games_list/lib/api/models/game_details_response.dart               | Dart     |         22 |          0 |          9 |         31 |
+| /Users/xxxogan/flutter_projects/games_list/lib/api/models/game_details_response.g.dart             | Dart     |         14 |          4 |          5 |         23 |
+| /Users/xxxogan/flutter_projects/games_list/lib/api/models/game_short_response.dart                 | Dart     |         18 |          0 |          9 |         27 |
+| /Users/xxxogan/flutter_projects/games_list/lib/api/models/game_short_response.g.dart               | Dart     |         13 |          4 |          5 |         22 |
+| /Users/xxxogan/flutter_projects/games_list/lib/api/models/games_list_response.dart                 | Dart     |         25 |          0 |         10 |         35 |
+| /Users/xxxogan/flutter_projects/games_list/lib/api/models/games_list_response.g.dart               | Dart     |         15 |          4 |          5 |         24 |
+| /Users/xxxogan/flutter_projects/games_list/lib/api/models/models.dart                              | Dart     |          3 |          0 |          1 |          4 |
+| /Users/xxxogan/flutter_projects/games_list/lib/features/collection/collection.dart                 | Dart     |          2 |          0 |          1 |          3 |
+| /Users/xxxogan/flutter_projects/games_list/lib/features/collection/view/collection_screen.dart     | Dart     |         27 |          2 |          7 |         36 |
+| /Users/xxxogan/flutter_projects/games_list/lib/features/collection/view/view.dart                  | Dart     |          1 |          0 |          1 |          2 |
+| /Users/xxxogan/flutter_projects/games_list/lib/features/collection/widgets/collection_button.dart  | Dart     |         38 |          1 |          6 |         45 |
+| /Users/xxxogan/flutter_projects/games_list/lib/features/collection/widgets/small_game_card.dart    | Dart     |         37 |          0 |          7 |         44 |
+| /Users/xxxogan/flutter_projects/games_list/lib/features/collection/widgets/widgets.dart            | Dart     |          2 |          0 |          1 |          3 |
+| /Users/xxxogan/flutter_projects/games_list/lib/features/game/bloc/game_bloc.dart                   | Dart     |         23 |          0 |          5 |         28 |
+| /Users/xxxogan/flutter_projects/games_list/lib/features/game/bloc/game_event.dart                  | Dart     |         12 |          0 |          6 |         18 |
+| /Users/xxxogan/flutter_projects/games_list/lib/features/game/bloc/game_state.dart                  | Dart     |         20 |          0 |         11 |         31 |
+| /Users/xxxogan/flutter_projects/games_list/lib/features/game/game.dart                             | Dart     |          2 |          0 |          1 |          3 |
+| /Users/xxxogan/flutter_projects/games_list/lib/features/game/view/game_screen.dart                 | Dart     |         74 |          0 |         13 |         87 |
+| /Users/xxxogan/flutter_projects/games_list/lib/features/game/view/view.dart                        | Dart     |          1 |          0 |          1 |          2 |
+| /Users/xxxogan/flutter_projects/games_list/lib/features/game/widgets/add_to_collection_button.dart | Dart     |         32 |          0 |          4 |         36 |
+| /Users/xxxogan/flutter_projects/games_list/lib/features/game/widgets/game_appbar.dart              | Dart     |         54 |          0 |          9 |         63 |
+| /Users/xxxogan/flutter_projects/games_list/lib/features/game/widgets/game_description.dart         | Dart     |         25 |          0 |          4 |         29 |
+| /Users/xxxogan/flutter_projects/games_list/lib/features/game/widgets/platforms_and_rating.dart     | Dart     |         41 |          0 |          5 |         46 |
+| /Users/xxxogan/flutter_projects/games_list/lib/features/game/widgets/widgets.dart                  | Dart     |          4 |          0 |          1 |          5 |
+| /Users/xxxogan/flutter_projects/games_list/lib/features/games_list/bloc/games_list_bloc.dart       | Dart     |         61 |          0 |         12 |         73 |
+| /Users/xxxogan/flutter_projects/games_list/lib/features/games_list/bloc/games_list_event.dart      | Dart     |         15 |          0 |          8 |         23 |
+| /Users/xxxogan/flutter_projects/games_list/lib/features/games_list/bloc/games_list_state.dart      | Dart     |         21 |          0 |         11 |         32 |
+| /Users/xxxogan/flutter_projects/games_list/lib/features/games_list/games_list.dart                 | Dart     |          2 |          0 |          1 |          3 |
+| /Users/xxxogan/flutter_projects/games_list/lib/features/games_list/view/games_list_screen.dart     | Dart     |         82 |          0 |         15 |         97 |
+| /Users/xxxogan/flutter_projects/games_list/lib/features/games_list/view/view.dart                  | Dart     |          1 |          0 |          1 |          2 |
+| /Users/xxxogan/flutter_projects/games_list/lib/features/games_list/widgets/game_card.dart          | Dart     |         58 |          0 |          5 |         63 |
+| /Users/xxxogan/flutter_projects/games_list/lib/features/games_list/widgets/widgets.dart            | Dart     |          1 |          0 |          1 |          2 |
+| /Users/xxxogan/flutter_projects/games_list/lib/features/home/home.dart                             | Dart     |          2 |          0 |          1 |          3 |
+| /Users/xxxogan/flutter_projects/games_list/lib/features/home/view/home_screen.dart                 | Dart     |         35 |          0 |          7 |         42 |
+| /Users/xxxogan/flutter_projects/games_list/lib/features/home/view/view.dart                        | Dart     |          1 |          0 |          1 |          2 |
+| /Users/xxxogan/flutter_projects/games_list/lib/features/home/widgets/base_app_bar.dart             | Dart     |         86 |          0 |         12 |         98 |
+| /Users/xxxogan/flutter_projects/games_list/lib/features/home/widgets/bottom_nav_bar.dart           | Dart     |         24 |          0 |          4 |         28 |
+| /Users/xxxogan/flutter_projects/games_list/lib/features/home/widgets/filter_bottom_sheet.dart      | Dart     |         22 |          0 |          8 |         30 |
+| /Users/xxxogan/flutter_projects/games_list/lib/features/home/widgets/multi_dialog_field.dart       | Dart     |         40 |          0 |          5 |         45 |
+| /Users/xxxogan/flutter_projects/games_list/lib/features/home/widgets/search_bottom_sheet.dart      | Dart     |         66 |          0 |         10 |         76 |
+| /Users/xxxogan/flutter_projects/games_list/lib/features/home/widgets/search_button.dart            | Dart     |         41 |          0 |          7 |         48 |
+| /Users/xxxogan/flutter_projects/games_list/lib/features/home/widgets/sort_button.dart              | Dart     |         32 |          0 |          4 |         36 |
+| /Users/xxxogan/flutter_projects/games_list/lib/features/home/widgets/widgets.dart                  | Dart     |          7 |          0 |          1 |          8 |
+| /Users/xxxogan/flutter_projects/games_list/lib/features/settings/settings.dart                     | Dart     |          2 |          0 |          1 |          3 |
+| /Users/xxxogan/flutter_projects/games_list/lib/features/settings/view/settings_screen.dart         | Dart     |         45 |          0 |          7 |         52 |
+| /Users/xxxogan/flutter_projects/games_list/lib/features/settings/view/view.dart                    | Dart     |          1 |          0 |          1 |          2 |
+| /Users/xxxogan/flutter_projects/games_list/lib/features/settings/widgets/settings_action_card.dart | Dart     |         40 |          0 |          5 |         45 |
+| /Users/xxxogan/flutter_projects/games_list/lib/features/settings/widgets/settings_toggle_card.dart | Dart     |         33 |          0 |          5 |         38 |
+| /Users/xxxogan/flutter_projects/games_list/lib/features/settings/widgets/widgets.dart              | Dart     |          2 |          0 |          1 |          3 |
+| /Users/xxxogan/flutter_projects/games_list/lib/games_list_app.dart                                 | Dart     |         39 |          0 |          7 |         46 |
+| /Users/xxxogan/flutter_projects/games_list/lib/main.dart                                           | Dart     |          8 |          0 |          3 |         11 |
+| /Users/xxxogan/flutter_projects/games_list/lib/router/router.dart                                  | Dart     |         19 |          0 |          2 |         21 |
+| /Users/xxxogan/flutter_projects/games_list/lib/router/router.gr.dart                               | Dart     |         89 |         18 |         25 |        132 |
+| /Users/xxxogan/flutter_projects/games_list/lib/ui/theme/theme.dart                                 | Dart     |         61 |          0 |          2 |         63 |
+| /Users/xxxogan/flutter_projects/games_list/lib/ui/ui.dart                                          | Dart     |          2 |          0 |          1 |          3 |
+| /Users/xxxogan/flutter_projects/games_list/lib/ui/widgets/base_bottom_sheet.dart                   | Dart     |         19 |          0 |          5 |         24 |
+| /Users/xxxogan/flutter_projects/games_list/lib/ui/widgets/base_container.dart                      | Dart     |         32 |          0 |          4 |         36 |
+| /Users/xxxogan/flutter_projects/games_list/lib/ui/widgets/base_game_card.dart                      | Dart     |         37 |          0 |          7 |         44 |
+| /Users/xxxogan/flutter_projects/games_list/lib/ui/widgets/widgets.dart                             | Dart     |          3 |          0 |          1 |          4 |
+| Total                                                                                              |          |      1,661 |         40 |        343 |      2,044 |
++----------------------------------------------------------------------------------------------------+----------+------------+------------+------------+------------+

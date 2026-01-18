@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:games_list/ui/ui.dart';
 
-class GameCard extends StatefulWidget {
+class GameCard extends StatelessWidget {
   const GameCard({
     super.key,
     required this.onTap,
@@ -14,16 +14,11 @@ class GameCard extends StatefulWidget {
   final String? image;
 
   @override
-  State<GameCard> createState() => _GameCardState();
-}
-
-class _GameCardState extends State<GameCard> {
-  @override
   Widget build(BuildContext context) {
     final ThemeData theme = Theme.of(context);
 
     return GestureDetector(
-      onTap: widget.onTap,
+      onTap: onTap,
       child: BaseContainer(
         margin: EdgeInsets.symmetric(horizontal: 16),
         padding: EdgeInsets.zero,
@@ -36,7 +31,7 @@ class _GameCardState extends State<GameCard> {
                 alignment: Alignment.bottomCenter,
                 children: [
                   Image.network(
-                    widget.image ?? "",
+                    image ?? "",
                     fit: .cover,
                     errorBuilder: (context, error, stackTrace) {
                       return Image.asset("assets/witcher.png");
@@ -50,7 +45,7 @@ class _GameCardState extends State<GameCard> {
                     color: theme.hintColor.withAlpha(150),
                     alignment: Alignment.center,
                     child: Text(
-                      widget.name,
+                      name,
                       style: theme.textTheme.titleMedium?.copyWith(
                         color: Colors.white,
                       ),

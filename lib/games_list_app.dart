@@ -16,16 +16,29 @@ class GamesListApp extends StatefulWidget {
 class _GamesListAppState extends State<GamesListApp> {
   final _router = AppRouter();
 
+  late final GamesApiClient _apiClient;
+
+  @override
+  void initState() {
+    super.initState();
+    _apiClient = GamesApiClient.create(apiUrl: dotenv.get("API_BASE_URL"));
+  }
+
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
-      create: (context) => GamesListBloc(
-        apiClient: GamesApiClient.create(apiUrl: dotenv.get("API_BASE_URL")),
-      ),
-      child: MaterialApp.router(
-        title: "Game Dude",
-        theme: theme,
-        routerConfig: _router.config(),
+    return MultiRepositoryProvider(
+      providers: [RepositoryProvider<GamesApiClient>.value(value: _apiClient)],
+      child: MultiBlocProvider(
+        providers: [
+          BlocProvider(
+            create: (context) => GamesListBloc(apiClient: _apiClient),
+          ),
+        ],
+        child: MaterialApp.router(
+          title: "Game Dude",
+          theme: theme,
+          routerConfig: _router.config(),
+        ),
       ),
     );
   }

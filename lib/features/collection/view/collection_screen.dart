@@ -1,7 +1,6 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:games_list/features/collection/collection.dart';
-import 'package:games_list/router/router.gr.dart';
 
 @RoutePage()
 class CollectionScreen extends StatelessWidget {
@@ -24,7 +23,7 @@ class CollectionScreen extends StatelessWidget {
             itemBuilder: (context, index) => SmallGameCard(
               icon: Icon(Icons.bookmark),
               onTap: () {
-                context.pushRoute(GameRoute());
+                // context.pushRoute(GameRoute());
               },
             ),
             separatorBuilder: (context, _) => Divider(),

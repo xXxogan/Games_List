@@ -10,6 +10,7 @@
 
 // ignore_for_file: no_leading_underscores_for_library_prefixes
 import 'package:auto_route/auto_route.dart' as _i6;
+import 'package:flutter/material.dart' as _i7;
 import 'package:games_list/features/collection/view/collection_screen.dart'
     as _i1;
 import 'package:games_list/features/game/view/game_screen.dart' as _i2;
@@ -36,18 +37,49 @@ class CollectionRoute extends _i6.PageRouteInfo<void> {
 
 /// generated route for
 /// [_i2.GameScreen]
-class GameRoute extends _i6.PageRouteInfo<void> {
-  const GameRoute({List<_i6.PageRouteInfo>? children})
-    : super(GameRoute.name, initialChildren: children);
+class GameRoute extends _i6.PageRouteInfo<GameRouteArgs> {
+  GameRoute({
+    _i7.Key? key,
+    required int gameId,
+    List<_i6.PageRouteInfo>? children,
+  }) : super(
+         GameRoute.name,
+         args: GameRouteArgs(key: key, gameId: gameId),
+         initialChildren: children,
+       );
 
   static const String name = 'GameRoute';
 
   static _i6.PageInfo page = _i6.PageInfo(
     name,
     builder: (data) {
-      return const _i2.GameScreen();
+      final args = data.argsAs<GameRouteArgs>();
+      return _i2.GameScreen(key: args.key, gameId: args.gameId);
     },
   );
+}
+
+class GameRouteArgs {
+  const GameRouteArgs({this.key, required this.gameId});
+
+  final _i7.Key? key;
+
+  final int gameId;
+
+  @override
+  String toString() {
+    return 'GameRouteArgs{key: $key, gameId: $gameId}';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(this, other)) return true;
+    if (other is! GameRouteArgs) return false;
+    return key == other.key && gameId == other.gameId;
+  }
+
+  @override
+  int get hashCode => key.hashCode ^ gameId.hashCode;
 }
 
 /// generated route for

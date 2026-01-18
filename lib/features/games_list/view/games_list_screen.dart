@@ -19,7 +19,7 @@ class _GamesListScreenState extends State<GamesListScreen> {
   @override
   void initState() {
     super.initState();
-    context.read<GamesListBloc>().add(const SearchGames());
+    context.read<GamesListBloc>().add(SearchGames());
     _scrollController.addListener(_onScroll);
   }
 
@@ -58,7 +58,7 @@ class _GamesListScreenState extends State<GamesListScreen> {
                     itemCount: games.length,
                     itemBuilder: (context, index) => GameCard(
                       onTap: () {
-                        context.pushRoute(const GameRoute());
+                        context.pushRoute(GameRoute(gameId: games[index].id));
                       },
                       name: games[index].name,
                       image: games[index].bgImage,
@@ -70,12 +70,6 @@ class _GamesListScreenState extends State<GamesListScreen> {
                   return SliverFillRemaining(
                     child: Center(child: Text(state.error.toString())),
                   );
-
-                // if (state is GamesListLoaded) {
-                //   final games = state.games.results;
-
-                // }
-                // return c
               }
             },
           ),

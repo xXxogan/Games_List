@@ -20,7 +20,7 @@ class _GamesApiClient implements GamesApiClient {
   final ParseErrorLogger? errorLogger;
 
   @override
-  Future<GamesResponse> getGamesList({
+  Future<GamesListResponse> getGamesList({
     int? page,
     int? pageSize,
     String? search,
@@ -34,7 +34,7 @@ class _GamesApiClient implements GamesApiClient {
     queryParameters.removeWhere((k, v) => v == null);
     final _headers = <String, dynamic>{};
     const Map<String, dynamic>? _data = null;
-    final _options = _setStreamType<GamesResponse>(
+    final _options = _setStreamType<GamesListResponse>(
       Options(method: 'GET', headers: _headers, extra: _extra)
           .compose(
             _dio.options,
@@ -45,9 +45,36 @@ class _GamesApiClient implements GamesApiClient {
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
     final _result = await _dio.fetch<Map<String, dynamic>>(_options);
-    late GamesResponse _value;
+    late GamesListResponse _value;
     try {
-      _value = GamesResponse.fromJson(_result.data!);
+      _value = GamesListResponse.fromJson(_result.data!);
+    } on Object catch (e, s) {
+      errorLogger?.logError(e, s, _options, response: _result);
+      rethrow;
+    }
+    return _value;
+  }
+
+  @override
+  Future<GameDetailsResponse> getGameById(int id) async {
+    final _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{};
+    final _headers = <String, dynamic>{};
+    const Map<String, dynamic>? _data = null;
+    final _options = _setStreamType<GameDetailsResponse>(
+      Options(method: 'GET', headers: _headers, extra: _extra)
+          .compose(
+            _dio.options,
+            '/games/${id}',
+            queryParameters: queryParameters,
+            data: _data,
+          )
+          .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
+    );
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
+    late GameDetailsResponse _value;
+    try {
+      _value = GameDetailsResponse.fromJson(_result.data!);
     } on Object catch (e, s) {
       errorLogger?.logError(e, s, _options, response: _result);
       rethrow;

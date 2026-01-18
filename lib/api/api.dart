@@ -33,9 +33,12 @@ abstract class GamesApiClient {
   }
 
   @GET("/games")
-  Future<GamesResponse> getGamesList({
+  Future<GamesListResponse> getGamesList({
     @Query("page") int? page,
     @Query("page_size") int? pageSize,
     @Query("search") String? search,
   });
+
+  @GET("/games/{id}")
+  Future<GameDetailsResponse> getGameById(@Path("id") int id);
 }

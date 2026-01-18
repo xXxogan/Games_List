@@ -49,8 +49,12 @@ class GameAppBar extends StatelessWidget {
             colors: [Colors.transparent, Colors.black87],
           ).createShader(bounds),
           blendMode: BlendMode.darken,
-          // TODO: baseImage
-          child: Image.network(image!, fit: BoxFit.cover),
+          child: Image.network(
+            image ?? "",
+            fit: BoxFit.cover,
+            errorBuilder: (context, error, stackTrace) =>
+                Image.asset("assets/witcher.png"),
+          ),
         ),
       ),
     );

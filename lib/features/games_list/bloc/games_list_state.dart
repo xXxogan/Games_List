@@ -14,7 +14,7 @@ final class GamesListLoading extends GamesListState {}
 final class GamesListLoaded extends GamesListState {
   const GamesListLoaded({required this.games, this.search});
 
-  final GamesResponse games;
+  final GamesListResponse games;
   final String? search;
 
   @override
