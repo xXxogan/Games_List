@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:games_list/ui/ui.dart';
 import 'package:multi_select_flutter/multi_select_flutter.dart';
 
-class MultiDialogField extends StatelessWidget {
-  const MultiDialogField({
+class BaseMultiDialogField extends StatelessWidget {
+  const BaseMultiDialogField({
     super.key,
     required this.title,
     required this.selectItems,

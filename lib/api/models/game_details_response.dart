@@ -8,6 +8,8 @@ class GameDetailsResponse extends Equatable {
   const GameDetailsResponse({
     required this.id,
     required this.name,
+    required this.description,
+    required this.rating,
     this.bgImage,
   });
 
@@ -22,6 +24,12 @@ class GameDetailsResponse extends Equatable {
 
   @JsonKey(name: "background_image")
   final String? bgImage;
+
+  @JsonKey(name: "description")
+  final String description;
+
+  @JsonKey(name: "rating")
+  final num rating;
 
   Map<String, dynamic> toJson() => _$GameDetailsResponseToJson(this);
 

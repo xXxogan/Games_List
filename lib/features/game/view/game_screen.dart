@@ -30,9 +30,12 @@ class GameScreen extends StatelessWidget implements AutoRouteWrapper {
           if (state is! GameLoaded) {
             return Center(child: CircularProgressIndicator());
           }
+
+          final game = state.game;
+
           return CustomScrollView(
             slivers: [
-              GameAppBar(image: state.game.bgImage),
+              GameAppBar(image: game.bgImage, name: game.name),
 
               SliverToBoxAdapter(
                 child: Center(
@@ -45,11 +48,15 @@ class GameScreen extends StatelessWidget implements AutoRouteWrapper {
 
               SliverToBoxAdapter(child: Divider()),
 
-              SliverToBoxAdapter(child: PlatformsAndRating()),
+              SliverToBoxAdapter(
+                child: PlatformsAndRating(rating: game.rating),
+              ),
 
               SliverToBoxAdapter(child: Divider()),
 
-              SliverToBoxAdapter(child: GameDescription()),
+              SliverToBoxAdapter(
+                child: GameDescription(description: game.description),
+              ),
 
               SliverToBoxAdapter(child: SizedBox(height: 16)),
 

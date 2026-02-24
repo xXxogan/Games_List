@@ -4,6 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:games_list/features/games_list/bloc/games_list_bloc.dart';
 import 'package:games_list/features/games_list/games_list.dart';
 import 'package:games_list/router/router.gr.dart';
+import 'package:games_list/ui/ui.dart';
 
 @RoutePage()
 class GamesListScreen extends StatefulWidget {
@@ -15,6 +16,7 @@ class GamesListScreen extends StatefulWidget {
 
 class _GamesListScreenState extends State<GamesListScreen> {
   final _scrollController = ScrollController();
+  final _searchController = TextEditingController();
 
   @override
   void initState() {
@@ -27,6 +29,7 @@ class _GamesListScreenState extends State<GamesListScreen> {
   void dispose() {
     _scrollController.removeListener(_onScroll);
     _scrollController.dispose();
+    _searchController.dispose();
     super.dispose();
   }
 
@@ -40,6 +43,8 @@ class _GamesListScreenState extends State<GamesListScreen> {
         controller: _scrollController,
         physics: const AlwaysScrollableScrollPhysics(),
         slivers: [
+          SearchFilterAppBar(title: "Game Dude", searchController: _searchController),
+
           const SliverToBoxAdapter(child: SizedBox(height: 25)),
 
           BlocBuilder<GamesListBloc, GamesListState>(

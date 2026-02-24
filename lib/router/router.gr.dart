@@ -54,7 +54,9 @@ class GameRoute extends _i6.PageRouteInfo<GameRouteArgs> {
     name,
     builder: (data) {
       final args = data.argsAs<GameRouteArgs>();
-      return _i2.GameScreen(key: args.key, gameId: args.gameId);
+      return _i6.WrappedRoute(
+        child: _i2.GameScreen(key: args.key, gameId: args.gameId),
+      );
     },
   );
 }

@@ -1,10 +1,24 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:games_list/features/collection/collection.dart';
+import 'package:games_list/ui/ui.dart';
 
 @RoutePage()
-class CollectionScreen extends StatelessWidget {
+class CollectionScreen extends StatefulWidget {
   const CollectionScreen({super.key});
+
+  @override
+  State<CollectionScreen> createState() => _CollectionScreenState();
+}
+
+class _CollectionScreenState extends State<CollectionScreen> {
+  final _searchController = TextEditingController();
+
+  @override
+  void dispose() {
+    _searchController.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -13,6 +27,8 @@ class CollectionScreen extends StatelessWidget {
     return Scaffold(
       body: CustomScrollView(
         slivers: [
+          SearchFilterAppBar(title: "Коллекция", searchController: _searchController),
+          
           SliverToBoxAdapter(child: SizedBox(height: 25)),
 
           SliverToBoxAdapter(child: CollectionButton()),

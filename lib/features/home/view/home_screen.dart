@@ -9,32 +9,10 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return AutoTabsRouter(
+    return AutoTabsScaffold(
       routes: [GamesListRoute(), CollectionRoute(), SettingsRoute()],
-
-      builder: (context, child) {
-        final tabsRouter = AutoTabsRouter.of(context);
-
-        return Scaffold(
-          body: NestedScrollView(
-            headerSliverBuilder: (context, _) {
-              switch (tabsRouter.activeIndex) {
-                case 0:
-                  return [BaseAppBar(title: "Game Dude")];
-                case 1:
-                  return [BaseAppBar(title: "Коллекция")];
-                case 2:
-                  return [];
-                default:
-                  throw Exception("Ошибка AppBar");
-              }
-            },
-
-            body: child,
-          ),
-
-          bottomNavigationBar: BottomNavBar(),
-        );
+      bottomNavigationBuilder: (_, child) {
+        return BottomNavBar();
       },
     );
   }

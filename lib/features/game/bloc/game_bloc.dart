@@ -7,18 +7,20 @@ part 'game_event.dart';
 part 'game_state.dart';
 
 class GameBloc extends Bloc<GameEvent, GameState> {
-  GameBloc({required this.apiClient}) : super(GameInitial()) {
+  GameBloc({required GamesApiClient apiClient})
+    : _apiClient = apiClient,
+      super(GameInitial()) {
     on<GetGameById>(_onLoad);
   }
 
-  final GamesApiClient apiClient;
+  final GamesApiClient _apiClient;
 
   Future<void> _onLoad(GetGameById event, Emitter<GameState> emit) async {
     try {
       if (state is! GameLoaded) {
         emit(GameLoading());
       }
-      final response = await apiClient.getGameById(event.id);
+      final response = await _apiClient.getGameById(event.id);
       emit(GameLoaded(game: response));
     } catch (e) {
       emit(GameFailure(error: e));

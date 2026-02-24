@@ -1,4 +1,7 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
+import 'package:games_list/features/games_list/games_list.dart';
 import 'package:games_list/ui/ui.dart';
 
 class GameCard extends StatelessWidget {
@@ -30,16 +33,26 @@ class GameCard extends StatelessWidget {
               child: Stack(
                 alignment: Alignment.bottomCenter,
                 children: [
-                  Image.network(
-                    image ?? "",
-                    fit: .cover,
-                    errorBuilder: (context, error, stackTrace) {
-                      return Image.asset("assets/witcher.png");
-                    },
-                    loadingBuilder: (context, child, loadingProgress) {
-                      if (loadingProgress == null) return child;
-                      return CircularProgressIndicator();
-                    },
+                  AspectRatio(
+                    aspectRatio: 16 / 9,
+                    child: Stack(
+                      children: [
+                        Positioned.fill(
+                          child: GameImage(image: image, fit: .cover),
+                        ),
+                        Positioned.fill(
+                          child: BackdropFilter(
+                            filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10),
+                            child: ColoredBox(
+                              color: Colors.black.withAlpha(50),
+                            ),
+                          ),
+                        ),
+                        Center(
+                          child: GameImage(image: image, fit: .contain),
+                        ),
+                      ],
+                    ),
                   ),
                   Container(
                     color: theme.hintColor.withAlpha(150),

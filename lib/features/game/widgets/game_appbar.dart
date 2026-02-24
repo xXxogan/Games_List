@@ -2,9 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:games_list/features/game/game.dart';
 
 class GameAppBar extends StatelessWidget {
-  const GameAppBar({super.key, this.image});
+  const GameAppBar({super.key, required this.name, this.image});
 
   final String? image;
+  final String name;
 
   @override
   Widget build(BuildContext context) {
@@ -35,7 +36,7 @@ class GameAppBar extends StatelessWidget {
         expandedTitleScale: 1.5,
         centerTitle: true,
         title: Text(
-          "Ведьмак 3. Дикая охота.",
+          name,
           style: theme.textTheme.titleSmall?.copyWith(
             color: Colors.white,
             fontSize: 17,

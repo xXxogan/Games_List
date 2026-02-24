@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 
 class PlatformsAndRating extends StatelessWidget {
-  const PlatformsAndRating({super.key});
+  const PlatformsAndRating({super.key, required this.rating});
+
+  final num rating;
 
   @override
   Widget build(BuildContext context) {

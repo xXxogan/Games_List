@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:games_list/ui/widgets/widgets.dart';
+import 'package:games_list/ui/ui.dart';
 
 class BaseGameCard extends StatelessWidget {
   const BaseGameCard({super.key, required this.icon, required this.onTap});

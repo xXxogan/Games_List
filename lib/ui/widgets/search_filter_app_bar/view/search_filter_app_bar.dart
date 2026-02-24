@@ -1,26 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:games_list/features/games_list/bloc/games_list_bloc.dart';
-import 'package:games_list/features/home/home.dart';
 import 'package:games_list/ui/ui.dart';
 
-class BaseAppBar extends StatefulWidget {
-  const BaseAppBar({super.key, required this.title});
+class SearchFilterAppBar extends StatelessWidget {
+  const SearchFilterAppBar({
+    super.key,
+    required this.title,
+    required this.searchController,
+  });
 
   final String title;
-
-  @override
-  State<BaseAppBar> createState() => _BaseAppBarState();
-}
-
-class _BaseAppBarState extends State<BaseAppBar> {
-  final _searchController = TextEditingController();
-
-  @override
-  void dispose() {
-    _searchController.dispose();
-    super.dispose();
-  }
+  final TextEditingController searchController;
 
   @override
   Widget build(BuildContext context) {
@@ -30,12 +21,12 @@ class _BaseAppBarState extends State<BaseAppBar> {
       listener: (context, state) {
         if (state is GamesListLoaded) {
           if ((state.search == null || state.search!.isEmpty) &&
-              _searchController.text.isNotEmpty) {
-            _searchController.clear();
+              searchController.text.isNotEmpty) {
+            searchController.clear();
           }
         }
         if (state is GamesListInitial) {
-          _searchController.clear();
+          searchController.clear();
         }
       },
       child: SliverAppBar(
@@ -43,7 +34,7 @@ class _BaseAppBarState extends State<BaseAppBar> {
         pinned: true,
         snap: true,
         elevation: 0,
-        title: Text(widget.title, style: theme.textTheme.titleLarge),
+        title: Text(title, style: theme.textTheme.titleLarge),
         centerTitle: true,
         leading: Image.asset("assets/logo.png"),
         actions: [
@@ -57,7 +48,7 @@ class _BaseAppBarState extends State<BaseAppBar> {
           preferredSize: Size.fromHeight(70),
           child: SearchButton(
             onTap: () => showSearchBotomSheet(context),
-            controller: _searchController,
+            controller: searchController,
           ),
         ),
       ),
@@ -73,7 +64,7 @@ class _BaseAppBarState extends State<BaseAppBar> {
       elevation: 0,
       context: context,
       builder: (context) => BaseBottomSheet(
-        child: SearchBottomSheet(controller: _searchController),
+        child: SearchBottomSheet(controller: searchController),
       ),
     );
 

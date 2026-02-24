@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:games_list/features/home/home.dart';
+import 'package:games_list/ui/ui.dart';
 
 class FilterBottomSheet extends StatelessWidget {
   const FilterBottomSheet({super.key});
@@ -16,13 +16,13 @@ class FilterBottomSheet extends StatelessWidget {
           child: Text("Фильтрация", style: theme.textTheme.headlineLarge),
         ),
 
-        MultiDialogField(title: "Выберете жанр", selectItems: genres),
+        BaseMultiDialogField(title: "Выберете жанр", selectItems: genres),
 
-        MultiDialogField(title: "Выберете жанр", selectItems: genres),
+        BaseMultiDialogField(title: "Выберете жанр", selectItems: genres),
 
-        MultiDialogField(title: "Выберете жанр", selectItems: genres),
+        BaseMultiDialogField(title: "Выберете жанр", selectItems: genres),
 
-        MultiDialogField(title: "Выберете жанр", selectItems: genres),
+        BaseMultiDialogField(title: "Выберете жанр", selectItems: genres),
       ],
     );
   }

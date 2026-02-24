@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:games_list/api/api.dart';
 import 'package:games_list/features/games_list/bloc/games_list_bloc.dart';
+import 'package:games_list/repositories/search_history/search_history.dart';
 import 'package:games_list/router/router.dart';
 import 'package:games_list/ui/ui.dart';
 
@@ -17,6 +18,7 @@ class _GamesListAppState extends State<GamesListApp> {
   final _router = AppRouter();
 
   late final GamesApiClient _apiClient;
+  final _historyRepository = SearchHistoryRepository();
 
   @override
   void initState() {
@@ -31,7 +33,10 @@ class _GamesListAppState extends State<GamesListApp> {
       child: MultiBlocProvider(
         providers: [
           BlocProvider(
-            create: (context) => GamesListBloc(apiClient: _apiClient),
+            create: (context) => GamesListBloc(
+              apiClient: _apiClient,
+              historyRepository: _historyRepository,
+            ),
           ),
         ],
         child: MaterialApp.router(
